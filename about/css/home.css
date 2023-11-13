@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Set the preferred font */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    margin: 12px;
+    width: 50vw;
+    background-color: black;
+    padding: 0px;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Center align vertically */
+    border: 1px solid white;
+    border-color: white;
+    border-radius: 25px;
+}
+
+header img {
+    
+    display: block;
+    max-height: 100%; /* Adjust as needed */
+    max-width: 25%; /* Adjust as needed */
+    border-radius: 50%; /* For circular shape */
+}
+
+main {
+    flex: 1;
+    /* Additional styles for main content if needed */
+}
+
+nav {
+    bottom: 0px;
+    position: fixed;
+    width: 90%;
+    background: #2f2f2f; /* Adjust as per your design */
+    margin: 12px;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.grid-container {
+    
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px; /* Adjust spacing between grid items */
+}
+
+.grid-item {
+    border: 1px solid #ccc; /* Optional border for visualization */
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.see-more {
+    text-decoration: none;
+    color: darkturquoise;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.see-more span {
+    margin-left: 5px;
+}
