@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #e0e0e0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+header {
+    background-color: black;
+    padding: 0px;
+    height: 10vh; /* 10% of the viewport height */
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    position: absolute;
+    left: 5px;
+    max-height: 100%; /* Ensures the image doesn't exceed the header's height */
+    max-width: 100%; /* Ensures the image doesn't exceed the header's width */
+    min-width: 10%;
+    min-height: 80%;
+}
+
+/* ... Previous CSS rules ... */
+
+.profile-section {
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Adjust margin as needed */
+    background-color: #FFFFFF;
+    border-radius: 1%;
+    padding: 10px 10px;
+    margin: 5% 5%;
+}
+
+.profile-image {
+    border-radius: 50%; /* Creates a circular shape */
+    overflow: hidden; /* Ensures the image stays within the rounded border */
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    margin: 2% auto; /* Center the image */
+}
+
+.profile-image img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crops the image to cover the container */
+    
+}
+
+.change-profile-btn, .save-changes-btn {
+    margin: 2%;
+    padding: 8px 16px; /* Adjust button size as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: #000000; /* Example color, you can change it */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ... Previous CSS rules ... */
+
+.edit-section {
+    margin-top: 0px; /* Adjust margin as needed */
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 1%;
+    padding: 10px;
+    margin: 5% 5%;
+    display: grid;
+    align-content: center;
+    
+    
+}
+
+.edit-details {
+    display: grid;
+    grid-template-columns: 1fr; /* One column */
+    gap: 20px; /* Gap between inputs */
+    
+}
+
+.edit-details input {
+    
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #black; /* Example border style, change as needed */
+    border-radius: 5px;
+}
