@@ -32,6 +32,9 @@
     } else if (visited === 1) {
     sessionStorage.setItem('visited', 'null');
     }
+        window.onbeforeunload = function() {
+  sessionStorage.removeItem('visited');
+};
 };
 </script>
 </html>
