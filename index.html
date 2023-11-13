@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spaceflight Exploration</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="contentContainer"></div>
+    <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2F1694173396080.jpg?alt=media&token=2cca7eef-2e0d-42a8-ba86-9732d4c014e2" alt="Spaceflight Exploration" alt="Spaceflight Exploration">
+</body>
+<script>
+    window.onload = function() {
+    let visited = sessionStorage.getItem('visited') || null;
+
+    if (visited === null) {
+        window.location.replace('home.html');
+        console.log(sessionStorage.getItem('visited'));
+        sessionStorage.setItem('visited', '1');
+    } else if (visited === 1) {
+    sessionStorage.setItem('visited', 'null');
+    }
+};
+</script>
+</html>
