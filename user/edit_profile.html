@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="version" content="0.1.1">
+    <meta name="version_date" content="11-13-2023">
+    <title>SFEX - Edit Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2F1694173396080.jpg?alt=media&token=2cca7eef-2e0d-42a8-ba86-9732d4c014e2" alt="Spaceflight Exploration">
+        <h3>Edit Profile</h3>
+    </header>
+    <main>
+        <div class="profile-section">
+            <div class="profile-image" onclick="selectImage()">
+                <img id="pfp" src="path_to_default_image" alt="Profile Image">
+            <button class="change-profile-btn" id="change-profile-btn">Change Profile</button>
+        </div>
+        <div class="edit-section">
+            <div class="edit-details">
+                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Bio">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Phone Number">
+            </div>
+            <button class="save-changes-btn">Save Changes</button>
+        </div>
+        
+    </main>
+    
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
+<script src="js/initFirebase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/changeProfile.js"></script>
+</body>
+</html>
