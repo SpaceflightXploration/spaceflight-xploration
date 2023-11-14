@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SFEX - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2F1694173396080.jpg?alt=media&token=2cca7eef-2e0d-42a8-ba86-9732d4c014e2" alt="Spaceflight Exploration">
+        <h3>Sign Up</h3>
+    </header>
+    <main>
+        <div class="profile-section">
+            <form class="signin-form">
+                <input type="username" id="su-username" placeholder="Username">
+                <input type="email" id="su-email" placeholder="Email">
+                <input type="password" id="su-password" placeholder="Password">
+                <input type="repassword" id="su-repassword" placeholder="Re-enter Password">
+                <p>Already have an account? <a href="sign_in.html">Sign In</a></p>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2021-2023 Spaceflight Exploration</p>
+        <p><a href="terms.html">Terms of Use</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+<!-- Include Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script> <!-- Use Realtime Database -->
+
+<!-- Include Firebase Initialization -->
+<script src="js/initFirebase.js"></script>
+
+<!-- Your script that uses Firebase -->
+<script src="js/auth.js"></script>
+</html>
