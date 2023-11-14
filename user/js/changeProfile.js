@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // User is signed out
             console.log('System Error: No User Signed In (but can change profile');
-                window.location.href = '/sign/sign_in.html';
+                window.location.href = '/../sign/sign_in.html';
             // Redirect or perform actions for a signed-out user
         }
     });
