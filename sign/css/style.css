@@ -1,0 +1,88 @@
+/* Updated CSS rules to match the specified design */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #2f2f2f;
+}
+
+p, h1, h2, h3, h4, h5, h6, a {
+    color: white;
+}
+
+header {
+    background-color: black;
+    padding: 0px;
+    height: 10vh; /* 10% of the viewport height */
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    position: absolute;
+    left: 5px;
+    max-height: 100%; /* Ensures the image doesn't exceed the header's height */
+    max-width: 100%; /* Ensures the image doesn't exceed the header's width */
+    min-width: 10%;
+    min-height: 80%;
+}
+
+/* ... Previous CSS rules ... */
+
+.profile-section {
+    text-align: center;
+    margin-top: 20px;
+    background-color: ##1f1f1f;
+    border-radius: 1%;
+    padding: 10px;
+    margin: 5% 5%;
+}
+
+.signup-form, .signin-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.signup-form, .signin-form input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.signup-form, .signin-form button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
