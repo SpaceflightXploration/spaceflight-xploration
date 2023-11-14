@@ -56,7 +56,7 @@ header img {
 }
 
 .change-profile-btn, .save-changes-btn {
-    margin: 2%;
+    margin: 5%;
     padding: 8px 16px; /* Adjust button size as needed */
     border: none;
     border-radius: 5px;
