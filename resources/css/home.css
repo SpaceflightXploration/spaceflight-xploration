@@ -1,1 +1,201 @@
+body {
+    margin: 0;
+    padding: 8vw;
+    padding-top: 6vh;
+    padding-bottom: 10vh;
+    font-family: Arial, sans-serif; /* Set the preferred font */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+}
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 240px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    margin: 6px;
+    width: 50vw;
+    background-color: black;
+    padding: 8px;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Center align vertically */
+    border: 1px solid white;
+    border-color: white;
+    border-radius: 25px;
+}
+
+header img {
+    
+    display: block;
+    max-height: 100%; /* Adjust as needed */
+    max-width: 25%; /* Adjust as needed */
+    border-radius: 50%; /* For circular shape */
+}
+
+.profileImage {
+    right: 0px;
+}
+
+main {
+    flex: 1;
+    /* Additional styles for main content if needed */
+}
+
+nav {
+    position: fixed;
+    width: 80vw;
+    height: 8vh; /* Adjust the height as needed */
+    background: #2f2f2f;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; /* Ensure the ul takes the full height of the nav */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0;
+    padding: auto; /* Automatic padding */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.grid-container {
+    
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px; /* Adjust spacing between grid items */
+}
+
+.grid-item {
+    border: 1px solid #ccc; /* Optional border for visualization */
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.see-more {
+    text-decoration: none;
+    color: darkturquoise;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.see-more span {
+    margin-left: 5px;
+}
+
+.launch-date {
+  font-style: italic;
+  color: #555;
+}
+
+* {
+    font-family: 'Barlow Condensed';
+    padding: 0px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.data-container {
+    max-width: 600px;
+    padding: 0;
+    margin: 10px auto; /* Center the container horizontally */
+}
+
+.data-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 75vw;
+}
+
+.data-item img {
+    max-height: 300dp;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container button, .details-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black; /* You can change the color */
+    color: #fff;
+    border: none;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover, .details-button:hover {
+    background-color: #2980b9; /* You can change the hover color */
+}
