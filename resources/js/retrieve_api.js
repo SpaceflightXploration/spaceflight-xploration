@@ -6,6 +6,7 @@ async function displayData() {
   try {
     // Show loading state
     loadingContainer.textContent = 'Loading...';
+    loadingContainer.style.color = 'white';
 
     const response = await fetch(apiUrl);
     const responseData = await response.json();
