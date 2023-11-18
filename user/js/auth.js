@@ -1,6 +1,19 @@
 // Wrap your code within the 'DOMContentLoaded' event listener to ensure it executes after the page content is loaded
 document.addEventListener("DOMContentLoaded", function() {
     const auth = firebase.auth();
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in
+            const uid = user.uid;
+            console.log('User is signed in');
+            // Redirect or perform actions for a signed-in user
+        } else {
+            // User is signed out
+            console.log('No user signed in');
+            window.location.href = '/../sign/sign_in.html';
+            // Redirect or perform actions for a signed-out user
+        }
+    });
     window.addEventListener("message", receiveMessage, false);
 
     function receiveMessage(event) {

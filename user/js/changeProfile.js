@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
              imageRef = storageRef.child('userdata/profile/' + user.uid +'.jpeg'); // Define the path to upload
             // User is signed in
             console.log('Awaiting Profile Picture Update...');
+            
             // Redirect or perform actions for a signed-in user
         } else {
             // User is signed out
             console.log('System Error: No User Signed In (but can change profile');
-                window.location.href = 'https://spaceflightxploration.github.io/spaceflight-xploration/sign/sign_in.html';
+                window.location.href = '/../sign/sign_in.html';
             // Redirect or perform actions for a signed-out user
         }
     });
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const changeProfileButton = document.querySelector('#change-profile-btn');
 
     changeProfileButton.addEventListener('click', selectImage);
-});
+})
 
 function selectImage() {
         const fileInput = document.createElement('input');
