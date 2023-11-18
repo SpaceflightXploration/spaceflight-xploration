@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>SFEX - Sign In</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,15 +27,17 @@
         <p>© 2021-2023 Spaceflight Exploration</p>
         <p><a href="terms.html">Terms of Use</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script> <!-- Use Realtime Database -->
+
+    <!-- Include Firebase Initialization -->
+    <script src="js/initFirebase.js"></script>
+
+    <!-- Your script that uses Firebase -->
+    <script src="js/auth_sign_in.js"></script>
+    <script src="js/auth.js"></script>
+    
 </body>
-<!-- Include Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script> <!-- Use Realtime Database -->
-
-<!-- Include Firebase Initialization -->
-<script src="js/initFirebase.js"></script>
-
-<!-- Your script that uses Firebase -->
-<script src="js/auth.js"></script>
 </html>
