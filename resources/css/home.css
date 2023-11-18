@@ -1,13 +1,14 @@
 body {
     margin: 0;
-    padding: 8vw;
+    padding-left: 0vw;
+    padding-right: 0vw;
     padding-top: 6vh;
-    padding-bottom: 10vh;
+    padding-bottom: 0vh;
     font-family: Arial, sans-serif; /* Set the preferred font */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: black;
+    max-height: 100vh;
+    background: linear-gradient(to bottom, black, #252525, black);
 }
 
 .material-symbols-outlined {
@@ -35,7 +36,7 @@ p {
 header {
     position: fixed;
     top: 0px;
-    margin: 6px;
+    margin: 8px;
     width: 50vw;
     background-color: black;
     padding: 8px;
@@ -62,6 +63,7 @@ header img {
 
 main {
     flex: 1;
+    padding: 5vw;
     /* Additional styles for main content if needed */
 }
 
@@ -73,6 +75,7 @@ nav {
     color: white;
     text-align: center;
     border-radius: 25px;
+    border: 1px solid white;
     left: 50%;
     transform: translateX(-50%);
     bottom: 8px;
@@ -138,12 +141,12 @@ nav a {
 }
 
 footer {
-    background-color: black;
     color: white;
     padding: 10px;
-    
+    padding-bottom: 10vh;
     bottom: 0;
-    width: 100%;
+    width: 75vw;
+    margin: 8px auto;
     text-align: center;
 }
 
@@ -160,15 +163,15 @@ footer a:hover {
 .data-container {
     max-width: 600px;
     padding: 0;
-    margin: 10px auto; /* Center the container horizontally */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .data-item {
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin: 10px auto;
     padding: 15px;
-    width: 75vw;
+    width: 80vw;
 }
 
 .data-item img {
