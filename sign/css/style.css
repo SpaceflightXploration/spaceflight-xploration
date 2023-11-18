@@ -1,5 +1,7 @@
 /* Updated CSS rules to match the specified design */
+
 body, html {
+    font-family: 'Barlow Condensed';
     margin: 0;
     padding: 0;
     height: 100%;
@@ -69,7 +71,7 @@ footer {
     background-color: black;
     color: white;
     padding: 10px;
-    position: fixed;
+    position: fixed;    
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -85,3 +87,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
+* {
+    font-family: 'Barlow Condensed';
+}
