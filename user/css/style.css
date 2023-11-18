@@ -1,32 +1,130 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #e0e0e0;
+* {
+    font-family: 'Barlow Condensed';
+    padding: 0px;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+body {
+    margin: 0;
+    padding-left: 0vw;
+    padding-right: 0vw;
+    padding-top: 10vh;
+    padding-bottom: 0vh;
+    font-family: Arial, sans-serif; /* Set the preferred font */
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    background: linear-gradient(to bottom, black, #252525, black);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 240px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+p {
     color: white;
 }
 
 header {
+    position: fixed;
+    top: 0px;
+    margin: 8px;
+    width: 50vw;
     background-color: black;
-    padding: 0px;
-    height: 10vh; /* 10% of the viewport height */
-    width: 100%;
-    position: relative;
+    padding: 8px;
+    height: 5vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center; /* Center align vertically */
+    border: 1px solid white;
+    border-color: white;
+    border-radius: 25px;
 }
 
 header img {
-    position: absolute;
-    left: 5px;
-    max-height: 100%; /* Ensures the image doesn't exceed the header's height */
-    max-width: 100%; /* Ensures the image doesn't exceed the header's width */
-    min-width: 10%;
-    min-height: 80%;
+    
+    display: block;
+    max-height: 100%; /* Adjust as needed */
+    max-width: 25%; /* Adjust as needed */
+    border-radius: 50%; /* For circular shape */
+}
+
+main {
+    flex: 1;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    /* Additional styles for main content if needed */
+}
+
+nav {
+    position: fixed;
+    width: 80vw;
+    height: 8vh; /* Adjust the height as needed */
+    background: #2f2f2f;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid white;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; /* Ensure the ul takes the full height of the nav */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0;
+    padding: auto; /* Automatic padding */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+footer {
+    color: white;
+    padding: 10px;
+    padding-bottom: 10vh;
+    bottom: 0;
+    width: 75vw;
+    margin: 8px auto;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* ... Previous CSS rules ... */
@@ -56,7 +154,7 @@ header img {
 }
 
 .change-profile-btn, .save-changes-btn {
-    margin: 2vh;
+    margin: 2%;
     padding: 8px 16px; /* Adjust button size as needed */
     border: none;
     border-radius: 5px;
@@ -65,8 +163,6 @@ header img {
     cursor: pointer;
     font-size: 16px;
 }
-
-/* ... Previous CSS rules ... */
 
 .edit-section {
     margin-top: 0px; /* Adjust margin as needed */
@@ -95,3 +191,39 @@ header img {
     border: 1px solid #black; /* Example border style, change as needed */
     border-radius: 5px;
 }
+
+.cover-photo {
+    width: 100vw;
+}
+
+.cover {
+      position: relative;
+      width: 100%;
+      height: 200px; /* Adjust height as needed */
+      background-size: cover;
+      color: #fff; /* Adjust text color for better contrast */
+    }
+
+    .profile-container {
+      position: absolute;
+       /* Adjust left position for spacing */
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-image {
+      width: 80px; /* Adjust width as needed */
+      height: 80px; /* Adjust height as needed */
+      overflow: hidden;
+      margin-right: 20px; /* Adjust margin for spacing */
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .user-info {
+      color: #333; /* Adjust text color as needed */
+    }
