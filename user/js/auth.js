@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // User is signed out
             console.log('No user signed in');
-            window.location.href = '/../sign/sign_in.html';
+            window.location.href = 'https://spaceflightxploration.github.io/spaceflight-xploration/sign/sign_in.html';
             // Redirect or perform actions for a signed-out user
         }
     });
