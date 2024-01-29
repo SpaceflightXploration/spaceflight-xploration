@@ -3,13 +3,14 @@ const firebase = require('firebase');
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAWnK5lzEFWY4qf74hGssiv_4_UC4IMocM",
+  authDomain: "sfs-bp-store.firebaseapp.com",
+  databaseURL: "https://sfs-bp-store-default-rtdb.firebaseio.com",
+  projectId: "sfs-bp-store",
+  storageBucket: "sfs-bp-store.appspot.com",
+  messagingSenderId: "1026737660232",
+  appId: "1:1026737660232:web:93eb81c99f5bea10fa937d",
+  measurementId: "G-H6449LTSF0"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -17,8 +18,8 @@ const database = firebase.database();
 
 // Initialize Discord bot
 const client = new Discord.Client();
-const discordToken = 'YOUR_DISCORD_BOT_TOKEN';
-const channelId = 'YOUR_DISCORD_CHANNEL_ID';
+const discordToken = 'OTU1MzY0NDgyNzE5Mjg1MjU5.GxM5up.wnf02ZZl355K7W1rBR_y-yt118KpxlL-txjYVE';
+const channelId = '1194221384021323857';
 
 let lastProcessedKey = null;
 
