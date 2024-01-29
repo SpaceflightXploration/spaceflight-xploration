@@ -18,7 +18,7 @@ const database = firebase.database();
 
 // Initialize Discord bot
 const client = new Discord.Client();
-const discordToken = 'OTU1MzY0NDgyNzE5Mjg1MjU5.GxM5up.wnf02ZZl355K7W1rBR_y-yt118KpxlL-txjYVE';
+const discordToken = '';
 const channelId = '1194221384021323857';
 
 let lastProcessedKey = null;
@@ -28,7 +28,7 @@ client.on('ready', () => {
 
   // Check for new posts every minute
   setInterval(() => {
-    const dbRef = database.ref('posts');
+    const dbRef = database.ref('launch_manifest');
     dbRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const key = childSnapshot.key;
