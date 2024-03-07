@@ -3,19 +3,35 @@
 <head>
     <title>Spaceflight Exploration</title>
     <style>
-        body {
-            background-color: black;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+    body {
+        background-color: black;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
         }
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    @media (min-width: 768px) {
         img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 50%;
         }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div id="contentContainer"></div>
@@ -23,15 +39,23 @@
 </body>
 <script>
     window.onload = function() {
-    let visited = sessionStorage.getItem('visited') || null;
+        setTimeout(function() {
+            let visited = sessionStorage.getItem('visited') || null;
 
-    if (visited === null) {
-        window.location.replace('home.html');
-        console.log(sessionStorage.getItem('visited'));
-        sessionStorage.setItem('visited', '1');
-    } else if (visited === 1) {
-    sessionStorage.setItem('visited', 'null');
-    }
-};
+            if (visited === null) {
+                let img = document.querySelector('img');
+                img.style.animation = 'fadeOut 1s ease-out forwards';
+                
+                setTimeout(function() {
+                    window.location.replace('home.html');
+                    console.log(sessionStorage.getItem('visited'));
+                    sessionStorage.setItem('visited', '1');
+                }, 1000); // Wait for 1 second after the fade-out animation
+
+            } else if (visited === '1') {
+                sessionStorage.setItem('visited', 'null');
+            }
+        }, 5000); // 5000 milliseconds = 5 seconds
+    };
 </script>
 </html>
