@@ -40,21 +40,21 @@
 <script>
     window.onload = function() {
         setTimeout(function() {
-            let visited = sessionStorage.getItem('visited') || null;
+            let img = document.querySelector('img');
+            img.style.animation = 'fadeOut 1s ease-out forwards';
+            
+            setTimeout(function() {
+                let visited = sessionStorage.getItem('visited') || null;
 
-            if (visited === null) {
-                let img = document.querySelector('img');
-                img.style.animation = 'fadeOut 1s ease-out forwards';
-                
-                setTimeout(function() {
+                if (visited === null) {
                     window.location.replace('home.html');
                     console.log(sessionStorage.getItem('visited'));
                     sessionStorage.setItem('visited', '1');
-                }, 1000); // Wait for 1 second after the fade-out animation
+                } else if (visited === '1') {
+                    sessionStorage.setItem('visited', 'null');
+                }
+            }, 1000); // Wait for 1 second after the fade-out animation
 
-            } else if (visited === '1') {
-                sessionStorage.setItem('visited', 'null');
-            }
         }, 5000); // 5000 milliseconds = 5 seconds
     };
 </script>
