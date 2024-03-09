@@ -5,7 +5,7 @@
     <title>Spaceflight Exploration - Home</title>
 </head>
 <body>
-    
+
 </body>
 </html><!DOCTYPE html>
 <html lang="en">
@@ -22,30 +22,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2F1694173396080.jpg?alt=media&toke000n=2cca7eef-2e0d-42a8-ba86-9732d4c014e2" alt="Spaceflight Exploration"> 
-        <img id="profileImage" src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Ficons%2Fprofile_dark.png?alt=media&token=4096c866-7db6-46c0-ac5d-b47705e22d59" alt="Profile">
+        <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2Fsflightx.png?alt=media&token=db006a50-7f5e-4cad-ab84-efe0df59d08c" alt="sFlight X Logo"> 
+        <img id="menuImage" class="menuImage" src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Ficons%2F1709980065842.png?alt=media&token=7eee6be2-3266-41dc-a9ee-9d7ad2efb2df" alt="Menu">
     </header>    
-
     <main>
         <!-- Content of the main section -->
-        <div>
-            <h2>Upcoming Launches</h2>
-            <h3>View upcoming launches in real-time!</h3>
+        <div class="welcome">
+                <h1>Welcome to sFlight X</h1>
+                <h5>sFlight X is a virtual space company that launches advanced technologies from Earth to Space</h5>
+                
+            </div>        
+        <div class="launches">
+            <h1>Launches</h1>
         </div>
         <div id="loading-container" class="loading-container">
             <p>Loading...</p>
         </div> 
         <div id="data-container" class="data-container"></div>
-        <div>
-            <h2>Blueprints</h2>
-            <h3>User uploaded blueprints in SFEX BP Store</h3>
+        <div class="blueprint">
+            <h1>Blueprints</h1>
+        </div> 
         </div>
         <ul id="dataList" class="data-list"></ul>
-        <div>
-            <h2>More Features</h2>
-            <h3>Check out our newest available and experimental features for our website!</h3>
-        </div>
+        <!-- Add this before the closing </main> tag -->
+<div id="dataList" class="data-list"></div>
+<div id="buttonContainer"></div>
         
         <div class="grid-container">
     <div class="grid-item">
@@ -76,13 +78,19 @@
         <p>Any amount are very helpful to me and I appreciate it!</p>
         <a href="#" class="see-more">See More <span>&rarr;</span></a>
     </div>
+    <div class="grid-item">
+        <h3>Book A Mission</h3>
+        <p>Let us bring your payload into space using our current fleet of Maya Four and Stellar - our launch provider.</p>
+        <a href="https://spaceflightxploration.github.io/spaceflight-xploration/data/upload/share_mission.html" class="see-more">See More <span>&rarr;</span></a>
+    </div>
 </div>
     </main>
     <footer>
-        <p>© 2021-2023 Spaceflight Exploration</p>
+        <h3>We're working something new with the website. Stay Tuned!</h3>
+        <p>© 2021-2024 Spaceflight Exploration</p>
         <p><a href="terms.html">Terms of Use</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
-    
+
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
@@ -93,14 +101,5 @@
     <script src="resources/js/retrieve_api.js"></script>
     <script src="resources/js/retrieve_bp.js"></script>
     <script src="resources/js/auth.js"></script>
-
-    <nav>
-        <ul>
-            <li><a href="#"><span class="material-symbols-outlined">home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">edit</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">folder</span></a></li>
-            <li><a href="user/edit_profile.html"><span class="material-symbols-outlined">account_circle</span></a></li>
-        </ul>
-    </nav>
 </body>
 </html>
