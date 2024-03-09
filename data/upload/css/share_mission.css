@@ -4,16 +4,19 @@
 }
 
 body {
-      margin: 0;
+    background: black;
+    margin: 0;
+    padding: 0px;
+    padding-top: 7.5vh;
     font-family: Arial, sans-serif; /* Set the preferred font */
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    background: black;
+    max-width: 100vw;
 }
 
 main {
-      
+
 }
 
 .material-symbols-outlined {
@@ -85,7 +88,7 @@ p {
 
 .feature-container img {
       width: 100%;
-      height: 200%
+      height: 25vh;
       object-fit: cover;
 }
 
@@ -94,7 +97,7 @@ p {
       margin: 10px;
       height: 100%;
       text-align: left;
-      
+
 }
 
 .btn-submit-container {
@@ -112,22 +115,28 @@ p {
 }
 
 header {
-      position: sticky;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    margin: 0vh;
+    position: fixed;
+    top: 0px;
+    margin: 0px;
     width: 100%;
-    height: 10%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 8px;
+    height: 5vh;
     display: flex;
-    justify-content: flex-start;    
-    align-items: center;
-    padding-left: 0px;
-    z-index: 1000;
+    justify-content: space-around;
+    align-items: center; /* Center align vertically */
+    transition: top 0.3s; /* Adding transition for smooth hide/show effect */
+}
+
+.header-hide {
+    top: -100px; /* Moves the header off-screen when scrolled down */
 }
 
 header img {
-      width: 3.25em;
-      padding-left: 20px;
+
+    display: block;
+    max-height: 100%; /* Adjust as needed */
+    max-width: 100%; /* Adjust as needed */
 }
 
 nav {
@@ -170,10 +179,10 @@ nav a, a {
 
 footer {
     color: white;
-    padding-bottom: 10vh;
+    padding: 4vh;
     bottom: 0;
     width: 75vw;
-    margin: 8px auto;
+    margin: 0px auto;
     text-align: center;
 }
 
@@ -194,7 +203,7 @@ footer a:hover {
             position: fixed;
             top: 0;
             left: 0;
-            width: 70%;
+            width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
             align-items: center;
