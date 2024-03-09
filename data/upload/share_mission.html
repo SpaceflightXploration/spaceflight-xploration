@@ -5,7 +5,7 @@
     <meta name="version" content="0.1.2">
     <meta name="version_date" content="11-19-2023">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <title>sFlight X - Home</title>
+    <title>sFlight X - Book Your Mission</title>
     <link rel="stylesheet" href="css/share_mission.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,35 +13,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
     <main>
-         
+
           <header>
-                <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2Fsf.png?alt=media&token=bab04758-f1cf-45aa-abce-1b488706142f" alt="SFX Logo">
-                <p>sFlight X</p>
-          </header>
-          
+        <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2Fsflightx.png?alt=media&token=db006a50-7f5e-4cad-ab84-efe0df59d08c" class="home" id="home" alt="sFlight X Logo"> 
+        <img id="menuImage" class="menuImage" src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Ficons%2F1709980065842.png?alt=media&token=7eee6be2-3266-41dc-a9ee-9d7ad2efb2df" alt="Menu">
+    </header>    
+
            <feature>
                 <div class="feature-container">
-                      <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2Fstarshipv1andv2.jpg?alt=media&token=60e203ec-34b2-4a00-8d1d-507a0180afb5" alt="">
+                      <img src="https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2FScreenshot_20240204-195015.jpg?alt=media&token=8d3ddf42-30c0-45c7-85a8-1f48974b15fa" alt="">
                 </div>
                 <div class="feature-content">
-                      <h1>Book A Mission</h1>
-                      <h3>Let us bring your payload into space using our current fleet of Maya One - our launch provider.</h3>
+                      <h1>Book Your Mission</h1>
+                      <h3>Fly with our current fleet of Maya Series. In Development, Maya 4. Also Stellar above.</h3>
                       <p class="pg">Note: This profile are about to submit to sFlight X, after pressing submit and we will take care about the mission details, provided by you.</p>
                 </div>
           </feature>
-          
+
           <!-- Overlay container -->
           <div id="overlay">
                 <!-- Dialog container -->
                 <div class="dialog-container">
                 <h1>Thank You!</h1>
                 <h6>Once we approve your booking, we will email you for further details with the payload processing, orbit destinations and launch opportunities.</h6>
+                <h6>Please reload the page.</h6>
                 </div>
           </div>
 
-          
+
          <div class="body-container">
                 <div class="input-container">
                 <h1>Enter Your Mission</h1>
@@ -49,18 +50,17 @@
                 <input type="text" id="missionInput" placeholder="Mission Name">
           </div>
           <div class="input-container">
-                <h1>Enter Your Email Address</h1>
-                <h6>This is used to contact you for further details. We won't log you using this credentials in this app.</h6>
-                <input type="email" id="emailInput" placeholder="Email">
+                <h1>Enter Email</h1>
+                <input type="text" id="emailInput" placeholder="Email Address">
           </div>
           <div class="input-container">
-                <h1>Enter Payload Dimensions</h1>
-                <h6>(max of h=4.95m, w=1.25m)</h6>
-                <input type="text" id="dimensionInput" placeholder="width x height">
+                <h1>Enter Dimensions</h1>
+                <input type="text" id="dimensionInput" placeholder="Dimensions">
           </div>
+          
           <div class="btn-submit-container">
-                <button class="btn-submit" onclick="submitData()"><h2>Submit</h2></button>
-          </div>
+                <button class="btn-submit" onclick="submitData(event)"><h2>Submit</h2></button>
+          </div>        
          </div>
     </main>
     <!-- Add this to your existing HTML -->
@@ -68,7 +68,8 @@
 
 
     <footer>
-        <p>© 2021-2023 sFlight X</p>
+        <h3>We're working something new with the website. Stay Tuned!</h3>
+        <p>© 2021-2024 Spaceflight Exploration</p>
         <p><a href="terms.html">Terms of Use</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
@@ -79,5 +80,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <script src="js/initFirebase.js"></script>
     <script src="js/share_mission.js"></script>
+    <script>
+document.getElementById('home').addEventListener('click', function() {
+  window.location.href = 'https://spaceflightxploration.github.io/spaceflight-xploration/home.html';
+});
+</script>
+
 </body>
 </html>
