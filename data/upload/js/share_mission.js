@@ -32,7 +32,7 @@ function generatePostKey() {
 function showOverlay() {
         document.getElementById('overlay').style.display = 'flex';
     }
-    
+
 function hideOverlay() {
       document.getElementById('missionInput').value = '';
     document.getElementById('emailInput').value = '';
@@ -43,6 +43,6 @@ function hideOverlay() {
 document.addEventListener('click', function(event) {
     // Check if the clicked element is not within the dialog container
     if (!event.target.closest('.dialog-container')) {
-        hideOverlay();
+        
     }
 });
