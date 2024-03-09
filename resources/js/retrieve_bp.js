@@ -16,20 +16,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     return; // Exit the loop
                 }
 
-                const { bp_name, type, image_url } = childSnapshot.val();
+                const { bp_name, image_url } = childSnapshot.val();
                 const postKey = childSnapshot.key;
 
                 // Create data item
-                const dataItem = document.createElement("li");
-                dataItem.className = "data-item";
-                dataItem.innerHTML = `
-                    <img src="${image_url}" alt="Image">
-                    <h3>${bp_name}</h3>
-                    <p>Type: ${type}</p>
-                    <button class="details-button" data-id="${postKey}">See Details</button>
-                `;
+                // Create data item
+const dataItem = document.createElement("li");
+dataItem.className = "data-item";
 
-                dataList.appendChild(dataItem);
+// Set background image using inline CSS
+dataItem.style.backgroundImage = `url(${image_url})`;
+dataItem.style.backgroundSize = "cover"; // Optional: adjust background size
+dataItem.style.backgroundPosition = "center"; // Optional: adjust background position
+
+// Append other content to data item
+dataItem.innerHTML += `
+    <h1>${bp_name}</h1>
+    <button class="details-button" data-id="${postKey}">See Details</button>
+`;
+
+// Append data item to list
+dataList.appendChild(dataItem);
                 itemsRetrieved++; // Increment the counter
             });
 
