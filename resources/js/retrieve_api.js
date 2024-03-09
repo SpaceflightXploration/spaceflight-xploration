@@ -1,4 +1,4 @@
-const apiUrl = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?limit=5';
+const apiUrl = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?limit=2';
 const dataContainer = document.getElementById('data-container');
 const loadingContainer = document.getElementById('loading-container');
 
@@ -15,61 +15,48 @@ async function displayData() {
     const launches = responseData.results || [];
 
     // Display the first 5 items
-    launches.slice(0, 5).forEach(item => {
-      // Create a div for each data item
-      const dataItem = document.createElement('div');
-      dataItem.classList.add('data-item');
+launches.slice(0, 5).forEach(item => {
+  // Create a div for each data item
+  const dataItem = document.createElement('div');
+  dataItem.classList.add('data-item');
 
-      // Extracting specific child values
-      const name = item.name;
-      const image = item.image;
-      const net = item.net;
-      const padName = item.pad.name; // Nested value under pad
-      const locationName = item.pad.location.name; // Nested value under location
-      const launchId = item.id; // Assuming ID is at the top level
+  // Set background image
+  dataItem.style.backgroundImage = `url(${item.image})`;
 
-      // Create elements for each extracted value
-      const nameElement = document.createElement('h2');
-      nameElement.textContent = `${name}`;
+  // Create a div for the "RECENT LAUNCH" text
+  const recentLaunchText = document.createElement('h1');
+  recentLaunchText.textContent = 'RECENT LAUNCH';
+  recentLaunchText.classList.add('recent-launch-text');
+  dataItem.appendChild(recentLaunchText);
 
-      const imageElement = document.createElement('img');
-      imageElement.src = image;
-      imageElement.alt = name; // Add alt text for accessibility
+  // Extracting specific child values
+  const name = item.name;
+  const launchId = item.id; // Assuming ID is at the top level
 
-      imageElement.onerror = function () {
-        // Image failed to load, switch to the fallback image
-        imageElement.src = 'https://firebasestorage.googleapis.com/v0/b/sfs-bp-store.appspot.com/o/static%2Flogo%2Fsfex_rocket_app.png?alt=media&token=3bba21da-9a41-45ac-82ca-0318190e8f42';
-      };
+  // Create elements for each extracted value
+  const nameElement = document.createElement('h2');
+  nameElement.textContent = `${name}`;
 
-      const netElement = document.createElement('p');
-      netElement.textContent = `${net}`;
+  // Create a right arrow button dynamically
+  const arrowButton = document.createElement('button');
+  arrowButton.innerHTML = 'SEE MORE &rarr;';
+  arrowButton.addEventListener('click', function () {
+    // Replace 'https://example.com' with the actual website URL
+    window.location.href = `https://example.com?id=${launchId}`;
+  });
 
-      const padNameElement = document.createElement('p');
-      padNameElement.textContent = `${padName}, ${locationName}`;
+  // Create a container for the arrow button
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('button-container');
+  buttonContainer.appendChild(arrowButton);
 
-      // Create a right arrow button dynamically
-      const arrowButton = document.createElement('button');
-      arrowButton.innerHTML = '&rarr; More Details';
-      arrowButton.addEventListener('click', function () {
-        // Replace 'https://example.com' with the actual website URL
-        window.location.href = `https://example.com?id=${launchId}`;
-      });
+  // Display the data items
+  dataItem.appendChild(nameElement);
+  dataItem.appendChild(buttonContainer);
 
-      // Create a container for the arrow button
-      const buttonContainer = document.createElement('div');
-      buttonContainer.classList.add('button-container');
-      buttonContainer.appendChild(arrowButton);
-
-      // Display the data items
-      dataItem.appendChild(nameElement);
-      dataItem.appendChild(imageElement);
-      dataItem.appendChild(netElement);
-      dataItem.appendChild(padNameElement);
-      dataItem.appendChild(buttonContainer);
-
-      // Append the data item to the container
-      dataContainer.appendChild(dataItem);
-    });
+  // Append the data item to the container
+  dataContainer.appendChild(dataItem);
+});
 
     // Hide loading state on successful data retrieval
     loadingContainer.textContent = '';
@@ -81,5 +68,20 @@ async function displayData() {
   }
 }
 
-// Call the function to initially display data
-displayData();
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const triggerPosition = window.innerHeight * 1.25; // 125vh
+
+document.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollTop && currentScroll > triggerPosition) {
+        // Scroll down and position is past the trigger position
+        header.classList.add('header-hide');
+    } else {
+        // Scroll up or position is within the trigger position
+        header.classList.remove('header-hide');
+    }
+
+    lastScrollTop = currentScroll;
+});
