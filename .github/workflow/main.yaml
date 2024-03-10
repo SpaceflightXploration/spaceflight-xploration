@@ -1,0 +1,22 @@
+name: Environment Variable Discord
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  your-job-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set Access
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: |
+          
+          echo "Setting Success"
+           
