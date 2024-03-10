@@ -1,73 +1,76 @@
-const apiUrl = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?limit=2';
 const dataContainer = document.getElementById('data-container');
 const loadingContainer = document.getElementById('loading-container');
 
 async function displayData() {
-  try {
-    // Show loading state
-    loadingContainer.textContent = 'Loading...';
-    loadingContainer.style.color = 'white';
+    try {
+        // Show loading state
+        loadingContainer.textContent = 'Loading...';
+        loadingContainer.style.color = 'white';
 
-    const response = await fetch(apiUrl);
-    const responseData = await response.json();
+        // Fetch upcoming launches from Firebase
+        const upcomingLaunchesRef = firebase.database().ref('/launch_manifest/upcoming');
+        const snapshot = await upcomingLaunchesRef.once('value');
+        const upcomingLaunches = snapshot.val() || [];
 
-    // Access the 'results' property containing the array of launches
-    const launches = responseData.results || [];
+        console.log('Upcoming Launches:', upcomingLaunches); // Log upcoming launches data
 
-    // Display the first 5 items
-launches.slice(0, 5).forEach(item => {
-  // Create a div for each data item
-  const dataItem = document.createElement('div');
-  dataItem.classList.add('data-item');
+        // Display the upcoming launches
+        Object.entries(upcomingLaunches).forEach(([postKey, launch]) => {
+            displayLaunch(launch, postKey);
+        });
 
-  // Set background image
-  dataItem.style.backgroundImage = `url(${item.image})`;
+        // Hide loading state on successful data retrieval
+        loadingContainer.textContent = '';
+    } catch (error) {
+        console.error('Error fetching data:', error);
 
-  // Create a div for the "RECENT LAUNCH" text
-  const recentLaunchText = document.createElement('h1');
-  recentLaunchText.textContent = 'RECENT LAUNCH';
-  recentLaunchText.classList.add('recent-launch-text');
-  dataItem.appendChild(recentLaunchText);
-
-  // Extracting specific child values
-  const name = item.name;
-  const launchId = item.id; // Assuming ID is at the top level
-
-  // Create elements for each extracted value
-  const nameElement = document.createElement('h2');
-  nameElement.textContent = `${name}`;
-
-  // Create a right arrow button dynamically
-  const arrowButton = document.createElement('button');
-  arrowButton.innerHTML = 'SEE MORE &rarr;';
-  arrowButton.addEventListener('click', function () {
-    // Replace 'https://example.com' with the actual website URL
-    window.location.href = `https://example.com?id=${launchId}`;
-  });
-
-  // Create a container for the arrow button
-  const buttonContainer = document.createElement('div');
-  buttonContainer.classList.add('button-container');
-  buttonContainer.appendChild(arrowButton);
-
-  // Display the data items
-  dataItem.appendChild(nameElement);
-  dataItem.appendChild(buttonContainer);
-
-  // Append the data item to the container
-  dataContainer.appendChild(dataItem);
-});
-
-    // Hide loading state on successful data retrieval
-    loadingContainer.textContent = '';
-  } catch (error) {
-    console.error('Error fetching data:', error);
-
-    // Display an error message in case of an error
-    loadingContainer.textContent = 'Error fetching data';
-  }
+        // Display an error message in case of an error
+        loadingContainer.textContent = 'Error fetching data';
+    }
 }
 
+function displayLaunch(launch, postKey) {
+    // Create a div for each data item
+    const dataItem = document.createElement('div');
+    dataItem.classList.add('data-item');
+
+    // Create elements for launch information
+    const missionNameElement = document.createElement('h2');
+    missionNameElement.textContent = launch.mission;
+
+    // Create an image element
+    const imageElement = document.createElement('img');
+    imageElement.src = launch.imageUrl; // Assuming 'imageUrl' is the key for the image URL in your database
+    imageElement.alt = launch.image; // Use mission name as alt text
+
+    console.log('Image URL:', launch.imageUrl); // Log image URL
+
+    // Create a right arrow button dynamically
+    const arrowButton = document.createElement('button');
+    arrowButton.innerHTML = 'SEE MORE &rarr;';
+    arrowButton.addEventListener('click', function () {
+        // Replace 'https://example.com' with the actual website URL
+        window.location.href = `data/upload/article.html?id=${postKey}&mission=${launch.mission}`;
+    });
+
+    // Create a container for the arrow button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');
+    buttonContainer.appendChild(arrowButton);
+
+    // Display the launch information
+    dataItem.appendChild(imageElement);
+    dataItem.appendChild(missionNameElement);
+    dataItem.appendChild(buttonContainer);
+
+    // Append the data item to the container
+    dataContainer.appendChild(dataItem);
+}
+
+// Trigger displayData function when the page loads
+window.onload = displayData;
+
+// Add scroll behavior (if needed)
 let lastScrollTop = 0;
 const header = document.querySelector('header');
 const triggerPosition = window.innerHeight * 1.25; // 125vh
@@ -85,3 +88,6 @@ document.addEventListener('scroll', () => {
 
     lastScrollTop = currentScroll;
 });
+
+// Trigger displayData function when the page loads
+window.onload = displayData;
